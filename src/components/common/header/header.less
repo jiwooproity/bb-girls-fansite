@@ -1,0 +1,42 @@
+@logo-font-size: 25px;
+@menu-item-font-size: 15px;
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-wrapper {
+  width: 1250px;
+  padding: 25px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo > a {
+  font-size: @logo-font-size;
+  line-height: @logo-font-size;
+  text-decoration: none;
+  color: var(--main-font-color);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+// 메뉴 링크
+.nav-menu-item > a {
+  font-size: @menu-item-font-size;
+  line-height: @menu-item-font-size;
+  text-decoration: none;
+  color: var(--main-font-color);
+}
