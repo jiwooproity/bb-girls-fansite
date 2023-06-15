@@ -7,12 +7,12 @@ type MenuIF = {
 const menu: MenuIF = [
   {
     id: "home",
-    label: "홈",
+    label: "nav.menu.item.home",
     to: "/",
   },
   {
     id: "gallery",
-    label: "갤러리",
+    label: "nav.menu.item.gallery",
     to: "/gallery",
   },
 ];
