@@ -1,5 +1,6 @@
 @logo-font-size: 25px;
 @menu-item-font-size: 15px;
+@translation-btn-font-size: 15px;
 
 .nav-container {
   width: 100%;
@@ -17,6 +18,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav-left-side {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-right-side {
+  width: auto;
+}
+
+.nav-translation-area {
+  display: flex;
+  align-items: center;
+}
+
+.nav-translation-btn {
+  font-size: @translation-btn-font-size;
+  line-height: @translation-btn-font-size;
+  text-transform: uppercase;
+  padding: 0px 8px;
+  border: none;
+  background-color: transparent;
+  color: var(--main-font-color);
+  cursor: pointer;
+}
+
+.nav-translation-btn:nth-child(1) {
+  border-right: 1px solid var(--main-border-color);
 }
 
 .nav-logo > a {
