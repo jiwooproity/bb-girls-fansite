@@ -1,73 +1,37 @@
-@logo-font-size: 25px;
-@menu-item-font-size: 15px;
-@translation-btn-font-size: 15px;
-
-.nav-container {
+.header-container {
   width: 100%;
+  padding: 15px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
 
-.nav-wrapper {
+.header-wrapper {
   width: 1250px;
-  padding: 25px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nav-left-side {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+.header-logo {
+  font-size: 25px;
+  line-height: 25px;
+  color: #2c2c2c;
 }
 
-.nav-right-side {
-  width: auto;
-}
-
-.nav-translation-area {
-  display: flex;
-  align-items: center;
-}
-
-.nav-translation-btn {
-  font-size: @translation-btn-font-size;
-  line-height: @translation-btn-font-size;
-  text-transform: uppercase;
-  padding: 0px 8px;
-  border: none;
-  background-color: transparent;
-  color: var(--main-font-color);
-  cursor: pointer;
-}
-
-.nav-translation-btn:nth-child(1) {
-  border-right: 1px solid var(--main-border-color);
-}
-
-.nav-logo > a {
-  font-size: @logo-font-size;
-  line-height: @logo-font-size;
-  text-decoration: none;
-  color: var(--main-font-color);
-}
-
-.nav-menu {
-  list-style: none;
+.header-menu-box {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-// 메뉴 링크
-.nav-menu-item > a {
-  font-size: @menu-item-font-size;
-  line-height: @menu-item-font-size;
+.header-menu-item {
+  list-style: none;
+}
+
+.header-menu-item > a {
+  font-size: 16px;
+  line-height: 16px;
   text-decoration: none;
-  color: var(--main-font-color);
+  color: #2c2c2c;
 }
