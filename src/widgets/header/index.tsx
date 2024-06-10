@@ -1,6 +1,8 @@
 import './style/navigation.css';
 
 import Image from 'next/image';
+import Link from 'next/link';
+
 import menu from './data/menu.json';
 
 const Header = () => {
@@ -13,7 +15,7 @@ const Header = () => {
         <ul className="nav-menu">
           {menu.map(item => (
             <li key={item.label} className="nav-menu-item">
-              {item.label}
+              <Link href={item.path}>{item.label}</Link>
             </li>
           ))}
         </ul>
