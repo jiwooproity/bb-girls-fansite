@@ -1,0 +1,52 @@
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 9999;
+}
+
+.header > .navigation {
+  width: 1280px;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > .navigation > .logo {
+  font-size: 24px;
+  line-height: 24px;
+  color: white;
+}
+
+.header > .navigation > .nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  list-style: none;
+}
+
+.header > .navigation > .nav-menu > .nav-menu-item {
+  font-size: 14px;
+  line-height: 14px;
+  color: white;
+}
+
+.header > .navigation > .login-wrapper {
+}
+
+.header > .navigation > .login-wrapper > button {
+  font-size: 14px;
+  line-height: 14px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
