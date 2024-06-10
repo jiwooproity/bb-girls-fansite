@@ -28,46 +28,26 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.front-logo {
+.main-arrow-guide-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   position: absolute;
-  top: 50%;
+  bottom: 30px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 1000;
-  }
+.main-arrow-guide-text {
+  font-size: var(--small-font-size);
+  line-height: var(--small-font-size);
+  color: white;
 }
 
-svg {
-  enable-background: new 0 0 292 93.5;
-}
-
-@keyframes dash {
-  0% {
-    stroke-dashoffset: -1000px;
-  }
-  50% {
-    fill: rgba(255, 255, 255, 0);
-  }
-  80% {
-    fill: rgba(255, 255, 255, 0);
-  }
-  90% {
-    fill: rgba(255, 255, 255, 0.8);
-  }
-  100% {
-    fill: rgba(255, 255, 255, 1);
-    stroke-dashoffset: 0px;
-  }
-}
-
-.path {
-  fill: transparent;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 0;
-  animation: dash 3s forwards;
+.main-arrow-guide {
+  width: 24px;
+  height: 24px;
 }

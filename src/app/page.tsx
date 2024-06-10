@@ -1,4 +1,3 @@
-import '@/shared/styles/globals.css';
 import Main from '@/page/main';
 
 const App = () => {

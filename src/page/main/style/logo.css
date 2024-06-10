@@ -1,0 +1,43 @@
+.front-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+svg {
+  enable-background: new 0 0 292 93.5;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: -1000px;
+  }
+  50% {
+    fill: rgba(255, 255, 255, 0);
+  }
+  80% {
+    fill: rgba(255, 255, 255, 0);
+  }
+  90% {
+    fill: rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    fill: rgba(255, 255, 255, 1);
+    stroke-dashoffset: 0px;
+  }
+}
+
+.path {
+  fill: transparent;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash 3s forwards;
+}

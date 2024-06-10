@@ -34,17 +34,22 @@
 }
 
 .header > .navigation > .nav-menu > .nav-menu-item {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: var(--small-font-size);
+  line-height: var(--small-font-size);
   color: white;
 }
 
-.header > .navigation > .login-wrapper {
+.header > .navigation > .nav-menu > .nav-menu-item > a {
+  text-decoration: none;
+  color: white;
 }
 
+/* .header > .navigation > .login-wrapper {
+} */
+
 .header > .navigation > .login-wrapper > button {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: var(--small-font-size);
+  line-height: var(--small-font-size);
   color: white;
   background-color: transparent;
   border: none;
