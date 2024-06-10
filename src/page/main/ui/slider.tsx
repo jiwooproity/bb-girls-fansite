@@ -8,9 +8,9 @@ import '../style/slide.css';
 const { Swiper, SwiperSlide } = require('swiper/react');
 
 const SLIDE_DATA = [
-  { des: 'minyoung', img: '/images/minyoung.jpeg' },
-  { des: 'eunji', img: '/images/eunji.jpeg' },
-  { des: 'yuna', img: '/images/yuna.jpeg' },
+  { des: 'minyoung', img: '/images/minyoung.webp' },
+  { des: 'eunji', img: '/images/eunji.webp' },
+  { des: 'yuna', img: '/images/yuna.webp' },
 ];
 
 const Slider = () => {
