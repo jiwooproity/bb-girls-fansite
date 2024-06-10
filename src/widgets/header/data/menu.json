@@ -1,0 +1,18 @@
+[
+  {
+    "label": "홈",
+    "path": "/"
+  },
+  {
+    "label": "멤버",
+    "path": "/member"
+  },
+  {
+    "label": "앨범",
+    "path": "/album"
+  },
+  {
+    "label": "티저",
+    "path": "/teaser"
+  }
+]

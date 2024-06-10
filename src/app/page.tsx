@@ -1,5 +1,8 @@
+import '@/shared/styles/globals.css';
+import Main from '@/page/main';
+
 const App = () => {
-  return <div>hi</div>;
+  return <Main />;
 };
 
 export default App;
