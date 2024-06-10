@@ -27,7 +27,7 @@ const Slider = () => {
             fill
             priority
             unoptimized
-            blurDataURL={slide.img}
+            loading="eager"
           />
           <div className="front-filter" />
         </SwiperSlide>
