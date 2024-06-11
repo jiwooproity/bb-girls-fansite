@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   height: 80px;
+  padding: 0px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,4 +57,28 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.header > .navigation > .mo-nav-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .header > .navigation > .nav-menu {
+    display: none;
+  }
+
+  .header > .navigation > .login-wrapper {
+    display: none;
+  }
+
+  .header > .navigation > .mo-nav-menu {
+    display: flex;
+  }
+
+  .header > .navigation > .mo-nav-menu > button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 }
