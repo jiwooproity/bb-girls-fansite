@@ -7,9 +7,11 @@ import Link from 'next/link';
 
 import menu from './data/menu.json';
 import useScroll from './lib/use-scroll';
+import useToggleBtn from './lib/use-toggle-btn';
 
 const Header = () => {
   const [headerRef] = useScroll();
+  const [toggleRef, toggle] = useToggleBtn();
 
   return (
     <div id="header" className="header" ref={headerRef}>
@@ -32,6 +34,17 @@ const Header = () => {
         </ul>
         <div className="login-wrapper">
           <button type="button">로그인</button>
+        </div>
+        <div className="mo-nav-menu">
+          <button type="button" onClick={toggle}>
+            <Image
+              ref={toggleRef}
+              src="/svgs/hamburger.svg"
+              width={24}
+              height={24}
+              alt="mobile-menu"
+            />
+          </button>
         </div>
       </nav>
     </div>
