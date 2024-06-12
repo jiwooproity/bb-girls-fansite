@@ -43,27 +43,3 @@
   background-color: rgba(0, 0, 0, 0.3);
   animation: lazy-filter 5.5s linear;
 }
-
-.main-arrow-guide-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.main-arrow-guide-text {
-  font-size: var(--small-font-size);
-  line-height: var(--small-font-size);
-  color: white;
-}
-
-.main-arrow-guide {
-  width: 24px;
-  height: 24px;
-}

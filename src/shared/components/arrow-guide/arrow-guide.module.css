@@ -1,0 +1,24 @@
+.arrowGuideWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.arrowGuideText {
+  font-display: block;
+  font-size: var(--small-font-size);
+  line-height: var(--small-font-size);
+  color: white;
+}
+
+.arrowGuideSVG {
+  width: 24px;
+  height: 24px;
+}

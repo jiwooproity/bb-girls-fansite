@@ -24,3 +24,7 @@ body {
   overflow-x: hidden;
   font-family: Pretendard-Regular;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}

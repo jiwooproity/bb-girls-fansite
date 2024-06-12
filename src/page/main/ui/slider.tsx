@@ -1,11 +1,12 @@
 'use client';
 
-import Image from 'next/image';
-import Logo from './logo';
-
 import 'swiper/css';
 import '../style/slide.css';
 import '../style/logo.css';
+
+import Image from 'next/image';
+import { ArrowGuide } from '@/shared/components';
+import Logo from './logo';
 
 const { Swiper, SwiperSlide } = require('swiper/react');
 
@@ -33,18 +34,7 @@ const Slider = () => {
         </SwiperSlide>
       ))}
       <Logo />
-      <div className="main-arrow-guide-wrapper">
-        <span className="main-arrow-guide-text">
-          새로운 브브걸의 여정을 응원해 주세요.
-        </span>
-        <Image
-          className="main-arrow-guide"
-          src="/svgs/down-arrow.svg"
-          width={24}
-          height={24}
-          alt="guide-arrow"
-        />
-      </div>
+      <ArrowGuide text="새로운 브브걸의 여정을 응원해 주세요." />
     </Swiper>
   );
 };
