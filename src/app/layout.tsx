@@ -1,5 +1,7 @@
 import '@/shared/styles/globals.css';
-import Header from '@/widgets/header';
+
+import { Header } from '@/widgets';
+import { Aurora } from '@/shared/components';
 
 export const metadata = {
   title: 'BBGirls | Fansite',
@@ -16,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Aurora />
       </body>
     </html>
   );
