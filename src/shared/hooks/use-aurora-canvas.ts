@@ -41,6 +41,29 @@ class Particle {
     this.sinValue = Math.random();
   }
 
+  createGradient(ctx: CanvasRenderingContext2D) {
+    const gradient = ctx.createRadialGradient(
+      this.x,
+      this.y,
+      this.radius * 0.1,
+      this.x,
+      this.y,
+      this.radius,
+    );
+
+    gradient.addColorStop(
+      0,
+      `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 1)`,
+    );
+
+    gradient.addColorStop(
+      1,
+      `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0)`,
+    );
+
+    return gradient;
+  }
+
   animate(
     ctx: CanvasRenderingContext2D,
     stageWidth: number,
@@ -68,27 +91,8 @@ class Particle {
       this.y -= 10;
     }
 
-    const gradient = ctx.createRadialGradient(
-      this.x,
-      this.y,
-      this.radius * 0.1,
-      this.x,
-      this.y,
-      this.radius,
-    );
-
-    gradient.addColorStop(
-      0,
-      `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 1)`,
-    );
-
-    gradient.addColorStop(
-      1,
-      `rgba(${this.rgb.r}, ${this.rgb.g}, ${this.rgb.b}, 0)`,
-    );
-
     ctx.beginPath();
-    ctx.fillStyle = gradient;
+    ctx.fillStyle = this.createGradient(ctx);
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     ctx.fill();
     ctx.closePath();
@@ -102,8 +106,8 @@ const useAuroraCavnas: AuroraCanvasHooksType = () => {
   const [pixelRatio, setPixelRatio] = useState<number>(1);
 
   const getParentStage = () => {
-    const wrapper = document.querySelector('.canvas-wrapper');
-    return [wrapper?.clientWidth, wrapper?.clientHeight] as [number, number];
+    const wrapper = document.querySelector('.canvas-wrapper') as HTMLDivElement;
+    return [wrapper.clientWidth, wrapper.clientHeight] as [number, number];
   };
 
   const canvasInit = useCallback(() => {
