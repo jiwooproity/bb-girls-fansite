@@ -23,13 +23,13 @@ const MAX_RADIUS = 1000;
 const MIN_RADIUS = 600;
 
 class Particle {
-  x: number;
-  y: number;
-  radius: number;
-  rgb: ParticleColorType;
-  vx: number;
-  vy: number;
-  sinValue: number;
+  private x: number;
+  private y: number;
+  private radius: number;
+  private rgb: ParticleColorType;
+  private vx: number;
+  private vy: number;
+  private sinValue: number;
 
   constructor(x: number, y: number, radius: number, rgb: ParticleColorType) {
     this.x = x;
