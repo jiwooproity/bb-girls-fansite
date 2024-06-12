@@ -3,23 +3,32 @@
 import { type RefObject } from 'react';
 import { useRef, useState, useEffect, useCallback } from 'react';
 
+interface ParticleColorType {
+  r: number;
+  g: number;
+  b: number;
+}
+
 type AuroraCanvasHooksType = () => [RefObject<HTMLCanvasElement>];
+
+const COLORS: ParticleColorType[] = [
+  { r: 0, g: 0, b: 0 },
+  { r: 97, g: 30, b: 19 },
+  { r: 80, g: 30, b: 26 },
+  { r: 97, g: 30, b: 19 },
+  { r: 0, g: 0, b: 0 },
+];
 
 class Particle {
   x: number;
   y: number;
   radius: number;
-  rgb: { r: number; g: number; b: number };
+  rgb: ParticleColorType;
   vx: number;
   vy: number;
   sinValue: number;
 
-  constructor(
-    x: number,
-    y: number,
-    radius: number,
-    rgb: { r: number; g: number; b: number },
-  ) {
+  constructor(x: number, y: number, radius: number, rgb: ParticleColorType) {
     this.x = x;
     this.y = y;
     this.radius = radius;
@@ -84,6 +93,11 @@ const useAuroraCavnas: AuroraCanvasHooksType = () => {
   const [ctx, setCtx] = useState<CanvasRenderingContext2D>();
   const [pixelRatio, setPixelRatio] = useState<number>(1);
 
+  const getParentStage = () => {
+    const wrapper = document.querySelector('.canvas-wrapper');
+    return [wrapper?.clientWidth, wrapper?.clientHeight] as [number, number];
+  };
+
   const canvasInit = () => {
     const canvas = canvasRef.current as HTMLCanvasElement;
     const getCtx = canvas?.getContext('2d') as CanvasRenderingContext2D;
@@ -102,6 +116,11 @@ const useAuroraCavnas: AuroraCanvasHooksType = () => {
     ctx?.scale(pixelRatio, pixelRatio);
   }, [ctx, pixelRatio]);
 
+  const createParticles = (x: number, y: number, sin: number) => {
+    const radius = sin * (1000 - 600) + 600;
+    return COLORS.map(color => new Particle(x, y, radius, color));
+  };
+
   useEffect(() => {
     canvasInit();
   }, []);
@@ -116,50 +135,23 @@ const useAuroraCavnas: AuroraCanvasHooksType = () => {
   useEffect(() => {
     if (ctx) {
       const canvas = canvasRef.current as HTMLCanvasElement;
+
       const x = Math.random() * canvas.clientWidth;
       const y = Math.random() * canvas.clientHeight;
       const sin = Math.random();
 
-      const particles = [
-        new Particle(x, y, sin * (1000 - 600) + 600, {
-          r: 0,
-          g: 0,
-          b: 0,
-        }),
-        new Particle(x, y, sin * (1000 - 600) + 600, {
-          r: 97,
-          g: 30,
-          b: 19,
-        }),
-        new Particle(x, y, sin * (1000 - 600) + 600, {
-          r: 80,
-          g: 30,
-          b: 26,
-        }),
-        new Particle(x, y, sin * (1000 - 600) + 600, {
-          r: 97,
-          g: 30,
-          b: 19,
-        }),
-        new Particle(x, y, sin * (1000 - 600) + 600, {
-          r: 0,
-          g: 0,
-          b: 0,
-        }),
-      ];
+      const particles = createParticles(x, y, sin);
+
+      const [width, height] = getParentStage();
+
+      const runAnimate = (particle: Particle) => {
+        particle.animate(ctx, width, height);
+      };
 
       const draw = () => {
-        const wrapper = document.querySelector(
-          '.canvas-wrapper',
-        ) as HTMLDivElement;
-
         ctx.fillStyle = '#000000';
-        ctx.fillRect(0, 0, wrapper.clientWidth, wrapper.clientHeight);
-
-        particles.forEach(particle => {
-          particle.animate(ctx, wrapper.clientHeight, wrapper.clientHeight);
-        });
-
+        ctx.fillRect(0, 0, width, height);
+        particles.forEach(runAnimate);
         requestAnimationFrame(draw);
       };
 
