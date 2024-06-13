@@ -9,7 +9,7 @@ const Aurora = () => {
 
   return (
     <div className="canvas-wrapper">
-      <canvas id="aurora-canvas" ref={canvasRef} height={500} />
+      <canvas id="aurora-canvas" ref={canvasRef} />
     </div>
   );
 };
